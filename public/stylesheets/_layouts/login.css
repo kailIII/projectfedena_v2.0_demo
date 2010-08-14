@@ -11,6 +11,7 @@ body {
 
 #top_logo {
     margin:0 auto;
+    padding-top:15px;
     height:107px; width:155px;
     /*background:#fff url(../../images/login/fedena_logo.jpg) no-repeat;*/
 }
