@@ -399,8 +399,8 @@ body > #content_wrapper {
 }
 #footer_logo {
     height:66px;
-    /* background: url(/images/footer_logo.png) no-repeat right; */
-
+    margin:0 auto;
+    width:980px;
 }
 
 #footer_logo a.footer-logo{

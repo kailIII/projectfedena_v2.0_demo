@@ -73,9 +73,6 @@ body {
 #wrapper  #help_forgot_pw a {text-decoration:none;font-weight:bold;color:#b00;}
 #wrapper  #help_forgot_pw a:hover {text-decoration:underline;font-weight:bold;color:#b00;}
 
-#footer{height:33px;background:#b00 url(../../images/login/footer_bg.jpg) repeat;}
-#footer #footer_links {height:33px;width:614px;margin:0px auto;text-align:center;padding-top:5px;color:#fff;padding-left:114px;}
-#footer #footer_links a,span {color:#fff;width:100px;float:left;text-decoration:none;}
 #username_texbox_bg input{border:none;margin:0px; padding:0px;text-align:center;}
 
 input[type="text"], input[type="password"], textarea, select {outline: none;}
@@ -90,8 +87,9 @@ input[type="text"], input[type="password"], textarea, select {outline: none;}
 }
 #footer_logo {
     height:66px;
-    /* background: url(/images/footer_logo.png) no-repeat right; */
-
+    position:relative;
+     width:980px;
+     margin:0 auto;
 }
 
 #footer_logo a.footer-logo{
@@ -130,10 +128,10 @@ input[type="text"], input[type="password"], textarea, select {outline: none;}
 
 #wrapper {
     min-height: 100%;
-    height: auto !important;
-    height: 100%;
-    margin: 0 auto -66px;
+    margin-bottom:-66px;
+    position:relative;
 }
-.push{
-    height: 66px;
+.clearfooter {
+height: 66px;
+clear: both;
 }
