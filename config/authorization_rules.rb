@@ -1402,7 +1402,7 @@ authorization do
         :doj_less_than_update,
         :doj_greater_than_update,
         :list_dob_year,:dob_equal_to_update,:dob_less_than_update,:dob_greater_than_update,
-        :remove,:change_to_former,:delete,
+        :remove,:change_to_former,
         :edit_privilege,
         :advanced_search_pdf,
         :profile_pdf,
