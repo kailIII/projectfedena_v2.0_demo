@@ -39,7 +39,7 @@ data = Array.new(){Array.new()}
     total_fees += p.amount
   end
   if s.check_fees_paid(@date) == false
-    data.push = [ i+1, s.full_name, total_fees  ]
+    data.push [ i+1, s.full_name, total_fees  ]
   end
 end
 

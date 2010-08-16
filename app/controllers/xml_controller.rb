@@ -1,5 +1,5 @@
 class XmlController < ApplicationController
-
+  require "rexml/document"
   before_filter :login_required
   filter_access_to :all
 
@@ -388,78 +388,3 @@ class XmlController < ApplicationController
             amount.text = "-#{s}"
             all_ledger_entry2 = voucher.add_element "ALLLEDGERENTRIES.LIST"
             ledger_name2 = all_ledger_entry2.add_element "LEDGERNAME"
-            ledger_name2.text = "Cash"
-            gst_class2 = all_ledger_entry2.add_element "GSTCLASS"
-            is_deemed_positive2 = all_ledger_entry2.add_element "ISDEEMEDPOSITIVE"
-            is_deemed_positive2.text = "Yes"
-            ledger_from_item2 = all_ledger_entry2.add_element "LEDGERFROMITEM"
-            ledger_from_item2.text = "No"
-            remove_zero_entries2 = all_ledger_entry2.add_element "REMOVEZEROENTRIES"
-            remove_zero_entries2.text = "No"
-            is_party_ledger2 = all_ledger_entry2.add_element "ISPARTYLEDGER"
-            is_party_ledger2.text = "Yes"
-            amount2 = all_ledger_entry2.add_element "AMOUNT"
-            amount2.text = "#{s}"
-#        date = enevelope.add_element "DSPVCHDATE"
-#        date.text = @start_date.beginning_of_month.strftime("%d-%m-%y")
-#        account = enevelope.add_element "DSPVCHLEDACCOUNT"
-#        account.text = @ledger.ledger_name
-#        namefield = enevelope.add_element "NAMEFIELD"
-#        infofield = enevelope.add_element "INFOFIELD"
-#        vouchertype = enevelope.add_element "DSPVCHTYPE"
-#        vouchertype.text = "Pymt"
-#        voucheramt = enevelope.add_element "DSPVCHDRAMT"
-#        voucheramt.text = s
-#        voucheramt = enevelope.add_element "DSPVCHDRAMT"
-        @start_date = @start_date+1.month
-      end
-    
-      #    enevelope = REXML::Element.new "ENVELOPE"
-      #    header = enevelope.add_element "HEADER"
-      #    tally_request = header.add_element "TALLYREQUEST"
-      #    tally_request.text = "Import Data"
-      #    body = enevelope.add_element "BODY"
-      #    import_data = body.add_element "IMPORTDATA"
-      #    requestdesc = import_data.add_element "REQUESTDESC"
-      #    report_name = requestdesc.add_element "REPORTNAME"
-      #    report_name.text = "All Masters"
-      #    static_variables = requestdesc.add_element "STATICVARIABLES"
-      #    svcurrentcompany = static_variables.add_element "SVCURRENTCOMPANY"
-      #    svcurrentcompany.text = @institution.config_value
-      #    requestdata = import_data.add_element "REQUESTDATA"
-      #
-      #    while count<2
-      #      tally_message = requestdata.add_element "TALLYMESSAGE"
-      #      currency = tally_message.add_element "CURRENCY"
-      #      currency.add_attribute("NAME",@currency.config_value)
-      #      currency.add_attribute("RESERVEDNAME","")
-      #      additional_name = currency.add_element("ADDITIONALNAME")
-      #      additional_name.text  = @currency.config_value
-      #      expanded_name = currency.add_element("EXPANDEDSYMBOL")
-      #      expanded_name.text = @currency.config_value
-      #      decimal_symbol = currency.add_element("DECIMALNAME")
-      #      decimal_symbol.text ="No"
-      #      original_name = currency.add_element("ORIGINALNAME")
-      #      original_name.text = @currency.config_value
-      #      is_suffix = currency.add_element("ISSUFFIX")
-      #      is_suffix.text = "No"
-      #      has_space = currency.add_element("HASSPACE")
-      #      has_space.text = "Yes"
-      #      in_millions = currency.add_element("INMILLIONS")
-      #      in_millions.text = "No"
-      #      decimal_places = currency.add_element("DECIMALSPLACES")
-      #      decimal_places.text = "2"
-      #      decimal_places_for_printing = currency.add_element("DECIMALPLACESFORPRINTING")
-      #      decimal_places_for_printing.text = "2"
-      #      count += 1
-      #    end
-
-      doc.add_element enevelope
-      file.puts doc
-      file.close
-
-      send_file "Tally.xml", :type=>"xml"
-
-    end
-  end
-end

@@ -19,13 +19,13 @@
   <% end %>
 
   <% total_fees =0 %>
-  <% form_for :fees, :url => {:action => 'pay_fees_defaulters', :student => @student.id,:date => @date.id, :fine => @fine} do |form| %>
-    <% unless @fee_particulars.nil? %>
-    
+ 
         <%if @financefee.transaction_id.nil? %>
             <%= render :partial=> 'defaulters_fine_submission' %>
           <% end %>
-      <table id="listing" align="center" width="100%" cellpadding="1" cellspacing="1">
+  <% form_for :fees, :url => {:action => 'pay_fees_defaulters', :student => @student.id,:date => @date.id, :fine => @fine} do |form| %>
+    <% unless @fee_particulars.nil? %>
+         <table id="listing" align="center" width="100%" cellpadding="1" cellspacing="1">
         <tr class="tr-head">
           <td>Sl no.</td>
           <td>Particulars</td>
