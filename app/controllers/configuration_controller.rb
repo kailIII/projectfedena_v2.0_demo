@@ -26,7 +26,7 @@ class ConfigurationController < ApplicationController
       #Configuration.set_config_values(params[:configuration])
       #Configuration.save_institution_logo(params[:upload]) unless params[:upload].nil?
 
-      flash[:notice] = 'Settings has been saved,Logo Upload is disabled in Demo.'
+      flash[:notice] = 'Saving Settings not allowed in demo'
       redirect_to :action => "settings"  and return
     end
   end
